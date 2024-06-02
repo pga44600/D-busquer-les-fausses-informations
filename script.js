@@ -13,7 +13,6 @@ function showInstructions() {
 function showHome() {
     document.getElementById('game-screen').style.display = 'none';
     document.getElementById('instruction-screen').style.display = 'none';
-    document.getElementById('result-screen').style.display = 'none';
     document.getElementById('home-screen').style.display = 'block';
 }
 
@@ -40,21 +39,21 @@ function checkQuiz() {
     if (correct) {
         resultElement.innerText = "Bien joué ! Vous avez identifié toutes les fausses informations.";
         document.getElementById('mission1').style.display = 'none';
-        document.getElementById('mission2').style.display = 'block'; // Préparez la prochaine mission
+        document.getElementById('mission2').style.display = 'block';
     } else {
         resultElement.innerText = "Certaines de vos réponses sont incorrectes. Essayez encore.";
     }
 }
 
 function checkConspiracy() {
-    const correctAnswer = "effets secondaires";  // Un des arguments souvent mentionnés
+    const correctAnswer = "effets secondaires";
     const userAnswer = document.getElementById('conspiracy-input').value.toLowerCase();
     const resultElement = document.getElementById('conspiracy-result');
 
     if (userAnswer.includes(correctAnswer)) {
         resultElement.innerText = "Correct ! Les effets secondaires sont souvent exagérés dans les théories de conspiration.";
         document.getElementById('mission2').style.display = 'none';
-        document.getElementById('mission3').style.display = 'block'; // Préparez la prochaine mission
+        document.getElementById('mission3').style.display = 'block';
     } else {
         resultElement.innerText = "Incorrect. Réessayez.";
     }
@@ -81,30 +80,9 @@ function checkSources() {
 
     const resultElement = document.getElementById('source-result');
     if (correct) {
-        resultElement.innerText = "Bien joué ! Vous avez identifié toutes les sources fiables.";
-        document.getElementById('mission3').style.display = 'none';
-        document.getElementById('mission4').style.display = 'block'; // Préparez la prochaine mission
+        resultElement.innerText = "Excellent ! Vous avez identifié les sources fiables.";
     } else {
         resultElement.innerText = "Certaines de vos réponses sont incorrectes. Essayez encore.";
     }
 }
 
-function checkVaccine() {
-    const correctAnswer = "stimule le système immunitaire";
-    const userAnswer = document.getElementById('vaccine-input').value.toLowerCase();
-    const resultElement = document.getElementById('vaccine-result');
-
-    if (userAnswer.includes(correctAnswer)) {
-        resultElement.innerText = "Correct ! Les vaccins stimulent le système immunitaire pour prévenir les maladies.";
-        document.getElementById('mission4').style.display = 'none';
-        showResult("Félicitations ! Vous avez complété toutes les missions !");
-    } else {
-        resultElement.innerText = "Incorrect. Réessayez.";
-    }
-}
-
-function showResult(message) {
-    document.getElementById('game-screen').style.display = 'none';
-    document.getElementById('result-message').innerText = message;
-    document.getElementById('result-screen').style.display = 'block';
-}
