@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu sur les Complots autour des Vaccins</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script src="scripts.js"></script>
+    <div id="home-screen">
+        <h1>Bienvenue au Jeu sur les Complots autour des Vaccins</h1>
+        <button onclick="startGame()">Commencer la Mission</button>
+        <button onclick="showInstructions()">Instructions</button>
+    </div>
+
+    <div id="instruction-screen" style="display: none;">
+        <h2>Instructions</h2>
+        <p>Votre objectif est d'identifier et de contrer les fausses informations sur les vaccins.</p>
+        <button onclick="showHome()">Retour à l'accueil</button>
+    </div>
+
+    <div id="game-screen" style="display: none;">
+        <div id="mission1">
+            <h2>Mission 1 : Démasquer les Fausses Informations</h2>
+            <p>Vous avez découvert une publication en ligne contenant des informations douteuses sur les vaccins. Identifiez les affirmations fausses pour les signaler.</p>
+            <div id="puzzle-container">
+                <p>Parmi les affirmations suivantes, lesquelles sont fausses ?</p>
+                <form id="quiz-form">
+                    <label>
+                        <input type="checkbox" name="question1"> Les vaccins modifient l'ADN des individus vaccinés.
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="question2"> Les vaccins contre le COVID-19 contiennent des puces électroniques pour suivre les gens.
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="question3"> Les vaccins contre le COVID-19 ont été approuvés après des essais cliniques rigoureux.
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="question4"> Les vaccins sont une méthode efficace pour prévenir les maladies infectieuses.
+                    </label><br>
+                    <button type="button" onclick="checkQuiz()">Vérifier</button>
+                    <p id="quiz-result"></p>
+                </form>
+            </div>
+        </div>
+
+        <div id="mission2" style="display: none;">
+            <h2>Mission 2 : Décrypter une Théorie du Complot</h2>
+            <p>Quels sont les arguments les plus courants utilisés dans les théories du complot sur les vaccins ?</p>
+            <input type="text" id="conspiracy-input" placeholder="Entrez votre réponse ici">
+            <button type="button" onclick="checkConspiracy()">Vérifier</button>
+            <p id="conspiracy-result"></p>
+        </div>
+
+        <div id="mission3" style="display: none;">
+            <h2>Mission 3 : Identifier les Sources Fiables</h2>
+            <p>Parmi les sources suivantes, lesquelles sont fiables ?</p>
+            <form id="source-form">
+                <label>
+                    <input type="checkbox" name="source1"> Organisation Mondiale de la Santé (OMS)
+                </label><br>
+                <label>
+                    <input type="checkbox" name="source2"> Blog personnel de santé inconnue
+                </label><br>
+                <label>
+                    <input type="checkbox" name="source3"> Centre pour le contrôle et la prévention des maladies (CDC)
+                </label><br>
+                <label>
+                    <input type="checkbox" name="source4"> Site de nouvelles conspirationnistes
+                </label><br>
+                <button type="button" onclick="checkSources()">Vérifier</button>
+                <p id="source-result"></p>
+            </form>
+        </div>
+
+        <div id="mission4" style="display: none;">
+            <h2>Mission 4 : Comprendre le Fonctionnement des Vaccins</h2>
+            <p>Expliquez comment les vaccins fonctionnent en une phrase :</p>
+            <input type="text" id="vaccine-input" placeholder="Entrez votre réponse ici">
+            <button type="button" onclick="checkVaccine()">Vérifier</button>
+            <p id="vaccine-result"></p>
+        </div>
+    </div>
+
+    <div id="result-screen" style="display: none;">
+        <h2>Résultat</h2>
+        <p id="result-message"></p>
+        <button onclick="showHome()">Retour à l'accueil</button>
+    </div>
+
+    <script src="scripts.js"></script>
+
+</body>
+</html>
